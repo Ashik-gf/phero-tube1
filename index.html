@@ -10,8 +10,60 @@
     <title>phero Tube</title>
 </head>
 <body>
-    <header></header>
-    <main>
+    <header class="w-full bg-white">
+<div class="navBar w-[80%] mx-auto h-16 bg-white flex justify-between">
+    <div class="log">
+        <img class="p-2 ml-4 pt-2 h-[50px]" src="image/Logo.png">
+    </div>
+    <div class="p-2">
+        <button class="btn bg-slate-700 text-white font-bold">ViewSort</button>
+    </div>
+    <div class="p-2">
+        <!-- <button class="btn bg-slate-700 text-white font-bold">Bloge</button> -->
+        <!-- You can open the modal using ID.showModal() method -->
+<button class="btn bg-slate-700 text-white font-bold" onclick="my_modal_4.showModal()">Bloge</button>
+<dialog id="my_modal_4" class="modal">
+  <form method="dialog" class="modal-box w-11/12 max-w-5xl">
+    <h3 class="font-bold text-lg">
+        FaQ
+    </h3>
+    <p class="py-4">
+        <h5>1:Discribe var, Let, const
+            <p>var:
+                Variables declared with var are function-scoped or globally-scoped, but not block-scoped.
+                If declared within a function, the variable is limited to that function's scope.
+                If declared outside of any function, the variable is globally accessible throughout the entire script.
+                Variables declared with var are subject to "hoisting," meaning they are moved to the top of their scope during the compilation phase.
+                Because of hoisting, you can access and use a var variable before it's actually declared in the code.
+                <br>
+                let:
+                Variables declared with let are block-scoped, meaning their scope is limited to the block (enclosed by curly braces) in which they are defined.
+                let variables are not hoisted to the top of their scope like var variables.
+                They can be updated or reassigned within their scope.
+                <br>
+                const:
+Variables declared with const are block-scoped and also have a constant value, meaning they cannot be reassigned after their initial value assignment.
+const variables must be assigned a value when declared, and this value cannot be changed.
+Like let, const variables are not hoisted to the top of their scope.
+
+            
+            </p>
+        </h5>
+    </p>
+    <div class="modal-action">
+      <!-- if there is a button, it will close the modal -->
+      <button class="btn">Close</button>
+    </div>
+  </form>
+</dialog>
+
+
+
+    </div>
+</div>
+
+    </header>
+    <main class="my-4">
         
             <div id="tabbtn" class="tabs tabs-boxed flex justify-center gap-2">
                 <!-- <a class="tab">Tab 1</a>  -->
@@ -20,7 +72,6 @@
     <section class="w-full">
         <div id="cardDatabox" class="card container mx-auto
         grid grid-cols-3 gap-4 bg-gray-100 shadow-xl">
-            
           </div>
     </section>
 

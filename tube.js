@@ -5,7 +5,7 @@ const phoneData = async() =>{
     // console.log(tubeData);
     const tabBoxContainer = document.getElementById("tabbtn")
     tubeData.forEach(tabData => {
-        console.log(tabData.category_id);
+        // console.log(tabData.category_id);
         const div = document.createElement("div")
         div.innerHTML=`
         <a onclick="getNews('${tabData.category_id}')" class="tab bg-violet-700 text-white font-bold">${tabData.category}</a> 
@@ -22,8 +22,9 @@ const data =  await res.json();
 const cardData = data.data; 
 const carddataContainer = document.getElementById("cardDatabox")
 carddataContainer.innerHTML=" ";
+
 cardData.forEach(card => {
-    console.log(card.others.views)
+    console.log(card.authors[0].verified)
     const cardDiv = document.createElement('div')
     cardDiv.classList=`card w-96 bg-gray-100 shadow-xl`
     cardDiv.innerHTML=`
@@ -36,7 +37,7 @@ cardData.forEach(card => {
         <div class="flex">
     <p>${card?.authors[0]?.profile_name}</p>
     
-    <img src="image/fi_10629607.svg">
+    <img class="h-[20px]" src="${card?.authors[0]?.verified? "blue.png" : ''}">
     </p>
     </div>
     <div>
@@ -50,5 +51,5 @@ cardData.forEach(card => {
 });  
 // console.log(cardData)
 }
-
+getNews()
 phoneData()
