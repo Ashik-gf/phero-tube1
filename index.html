@@ -11,12 +11,14 @@
 </head>
 <body>
     <header class="w-full bg-white">
-<div class="navBar w-[80%] mx-auto h-16 bg-white flex justify-between">
+<div class="navBar w-full lg:w-[80%] md:w-[80%] mx-auto h-16 bg-white flex justify-between">
     <div class="log">
-        <img class="p-2 ml-4 pt-2 h-[50px]" src="image/Logo.png">
+        <img class="p-2 ml-4 sm:w-[150px] pt-2 h-[50px]" src="image/Logo.png">
     </div>
     <div class="p-2">
-        <button class="btn bg-slate-700 text-white font-bold">ViewSort</button>
+        <button id="viewBtn" class="btn p-1 bg-slate-700 text-white font-bold">
+            
+        </button>
     </div>
     <div class="p-2">
         <!-- <button class="btn bg-slate-700 text-white font-bold">Bloge</button> -->
@@ -69,14 +71,38 @@ Like let, const variables are not hoisted to the top of their scope.
                 <!-- <a class="tab">Tab 1</a>  -->
               </div>
     </main>
+    <!-- all body news -->
+    <section class="w-full">
+        <div id="mainCardDatabox" class="card container mx-auto
+        grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4 bg-gray-100 shadow-xl">
+          </div>
+    </section>
     <section class="w-full">
         <div id="cardDatabox" class="card container mx-auto
-        grid grid-cols-3 gap-4 bg-gray-100 shadow-xl">
+        grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4 bg-gray-100 shadow-xl">
           </div>
+    </section>
+    <section class="w-full">
+        <div id="viewsCardBox" class="card container mx-auto
+        grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4 bg-gray-100 shadow-xl">
+          </div>
+    </section>
+    
+    <!-- no video -->
+    <section class=" w-full">
+        <div id="novideos">
+
+        </div>
+    </section>
+    <!-- all videos -->
+    <section>
+        <div id="allnews" class="div grid grid-cols-3 gap-4">
+
+        </div>
     </section>
 
 
-
+    <script src="shortviews.js"></script>
     <script src="tube.js"></script>
 </body>
 </html>
