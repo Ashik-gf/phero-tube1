@@ -21,7 +21,7 @@ const getViews = async(category_id)=>{
     const res = await fetch(`https://openapi.programming-hero.com/api/videos/category/${category_id}`)
     const data =  await res.json();
    const cardData  =data.data;
-    console.log(cardData);
+    // console.log(cardData[0].others.views.split(0)[0]);
     const viewsCardContainer = document.getElementById("viewsCardBox")
     viewsCardContainer.innerHTML=" ";
     const carddataContainer = document.getElementById("cardDatabox")
@@ -31,8 +31,27 @@ const noVideosContainer = document.getElementById('novideos')
     const mainBoxContainer = document.getElementById("mainCardDatabox")
     mainBoxContainer.innerHTML=" ";
 
+    const sortfun=(viewsValue1)=>{
+        const bnd =[]
+        viewsValue1 = viewsValue1.replace(/[^0-9.]/g, '');
+        
+        bnd.push(viewsValue1)
+       bnd.sort((a, b)=> a.viewsValue1 - b.viewsValue1) 
+        // const myArray = Object.values(viewsValue1);
+        
+
+        // const viewsValue1 =`${cardData[0].others.views.split(0)[0]}`
+        // const viewsValue2 =`${cardData[0].others.views.split(0)[0]}`
+        // const differ = viewsValue1 - viewsValue2;
+        // return differ
+    //    console.log(viewsValue1) ;
+    }
+    sortfun(card.others.views)
+    
+
+
     cardData.forEach(card => {
-        console.log(card)
+        // console.log(card)
         const cardDiv = document.createElement('div')
     cardDiv.classList=`card w-96 bg-gray-100 shadow-xl`
     cardDiv.innerHTML=`
@@ -51,7 +70,7 @@ const noVideosContainer = document.getElementById('novideos')
     </div>
     <div>
 
-    <p>Total views:${card.others.views}</p>
+    <p>Total views: ${card.others.views}</p>
     </div>
     </div>
 

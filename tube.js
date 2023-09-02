@@ -63,22 +63,24 @@ cardData.forEach(card => {
     const cardDiv = document.createElement('div')
     cardDiv.classList=`card w-96 bg-gray-100 shadow-xl`
     cardDiv.innerHTML=`
+    <div class="h-[360px]">
     <figure><img class="h-[200px] w-[380px] rounded-xl p-3" src="${card.thumbnail}" /></figure>
-    <p>${card?.others.posted_date? card.others.posted_date : " no time "}</p>
-    <div class="card-body">
+    <p class=" text-white flex justify-end -my-12 w-[320px] ml-8">${card.others.posted_date? showTime(card.others.posted_date) : " Uploded Now "}</p>
+    <div class="card-body p-4 my-20 ">
     <div class="flex">
     <img class="h-[50px] w-[50px] rounded-full" src="${card?.authors[0]?.profile_picture}">
     <h2 class="text-black text-lg p-2 mx-4 font-bold">${card.title}</h2>
     </div>
         <div class="flex">
-    <p>${card?.authors[0]?.profile_name}</p>
+    <p class="text-black">${card?.authors[0]?.profile_name}</p>
     
     <img class="h-[20px]" src="${card?.authors[0]?.verified? "blue.png" : ''}">
     </p>
     </div>
     <div>
 
-    <p>Total views:${card.others.views}</p>
+    <p class="text-black">Total views:${card.others.views}</p>
+    </div>
     </div>
     </div>
 
@@ -105,22 +107,22 @@ const allDataNews = async()=>{
         
         const continerBox = document.createElement('div')
         continerBox.innerHTML=`
-        <div class=" bg-gray-300 p-1 rounded-lg h-[400px]">
+        <div class=" bg-gray-300 p-1 rounded-lg h-[360px]">
         <figure><img class="h-[200px] w-[380px] rounded-xl p-3" src="${news.thumbnail}" /></figure>
-    <p>${news.others.posted_date? news.others.posted_date : " no time "}</p>
-    <div class="card-body  h-[160px] w-[380px] mx-auto">
+    <p class="bg-gray-500 text-white flex justify-end -my-12 w-[320px] ml-8">${news.others.posted_date? showTime(news.others.posted_date) : " Updated Now "}</p>
+    <div class="card-body my-12 h-[160px] w-[380px] mx-auto">
     <div class="flex">
     <img class="h-[50px] w-[50px] rounded-full" src="${news?.authors[0]?.profile_picture}">
     <h2 class="text-black text-lg p-2 mx-4 font-bold">${news.title}</h2>
     </div>
         <div class="flex">
-    <p>${news?.authors[0]?.profile_name}</p>
+    <p class="text-black">${news?.authors[0]?.profile_name}</p>
     
-    <img class="h-[20px]" src="${news?.authors[0]?.verified? "blue.png" : ''}">
+    <img class="h-[20px] " src="${news?.authors[0]?.verified? "blue.png" : ''}">
     </p>
     </div>
     <div>
-    <p>Total views:${news.others.views}</p>
+    <p class="text-black">Total views:${news.others.views}</p>
     </div>
     </div>
         
@@ -131,4 +133,12 @@ const allDataNews = async()=>{
         mainBoxContainer.appendChild(continerBox);
     });
 
+}
+
+function showTime(sec){
+    const hours = (sec/3600).toFixed();
+    const remainingSecound = sec%3600;
+    const minutes =(remainingSecound/60).toFixed();
+    const time =`${hours} hrs ${minutes} min ago`
+    return time;
 }
