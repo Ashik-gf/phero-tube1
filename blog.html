@@ -1,17 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <div class="mockup-window border bg-blue-300">
-        <div class="flex justify-center px-4 py-16 bg-gray-200">
-            
-        
-        </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PHero Tube</title>
+    <!-- DaisyUI and TailwindCSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@3.6.4/dist/full.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div
+      class="mx-auto w-11/12 px-10 py-5 rounded-md my-20 bg-slate-950 text-white text-justify"
+    >
+      <h3 class="text-2xl font-bold mt-12 mb-3 rounded-lg">
+        <span class="bg-pink-400 text-white p-2 rounded-lg">#01</span>
+        scope of <span class="text-pink-400">var</span>,
+        <span class="text-pink-400">let</span>, and
+        <span class="text-pink-400">const</span>
+      </h3>
+      <div class="mx-auto bg-gray-700 rounded-lg p-5 mt-4">
+        <strong class="border-b-2 border-pink-400">var</strong>
+
+        <ul>
+          <li>Function scope.</li>
+          <li>Hoisted.</li>
+          <li>Allows redeclaration and reassignment.</li>
+        </ul>
+        <strong class="border-b-2 border-pink-400">let</strong>
+
+        <ul>
+          <li>Block scope.</li>
+          <li>Not hoisted.</li>
+          <li>Allows reassignment but not redeclaration</li>
+        </ul>
+        <strong class="border-b-2 border-pink-400">const</strong>
+
+        <ul>
+          <li>Function scope.</li>
+          <li>Must have a value when declared.</li>
+          <li>
+            Cannot be reassigned (for primitives), but allows modifications for
+            objects and arrays.
+          </li>
+        </ul>
       </div>
-</body>
+
+      <h3 class="text-2xl font-bold mt-12 mb-3 rounded-lg">
+        <span class="bg-pink-400 text-white p-2 rounded-lg">#02</span>
+
+        use cases of <span class="text-pink-400">null</span> and
+        <span class="text-pink-400">undefined</span>
+      </h3>
+      <div class="mx-auto bg-gray-700 rounded-lg p-5 mt-4">
+        <strong class="border-b-2 border-pink-400">null</strong>
+        <p>Explicitly Indicating Absence of Value</p>
+
+        <strong class="border-b-2 border-pink-400">undefined</strong>
+        <p>
+          When a variable is declared but not assigned a value,<br />
+          it is automatically initialized to undefined
+        </p>
+      </div>
+
+      <h3 class="text-2xl font-bold mt-12 mb-3 rounded-lg">
+        <span class="bg-pink-400 text-white p-2 rounded-lg">#03</span>
+
+        What do you mean by
+        <span class="text-pink-400">REST</span> API?
+      </h3>
+      <div class="mx-auto bg-gray-700 rounded-lg p-5 mt-4">
+        <p>
+          a REST API (Representational State Transfer Application Programming
+          Interface) is a standardized way for software applications to
+          communicate over the internet. It uses HTTP methods (like GET, POST,
+          PUT, and DELETE) to access and manipulate resources (such as data) on
+          a server. REST APIs are known for their simplicity, scalability, and
+          use of URLs to identify resources. They are widely used for building
+          web services and enabling interactions between different software
+          systems.
+        </p>
+      </div>
+    </div>
+  </body>
 </html>
